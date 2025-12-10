@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+*.xcworkspace/
+*.xcuserstate
+*.xcuserdata/
+
+# Visual Studio
+*.vcxproj.user
+*.sln
+Debug/
+Release/
+
+# openFrameworks generated files
+obj/
+bin/data/*.psd
+bin/data/*.ai
+
+# Logs
+*.log
+
+# Max/MSP backups
+max/*-backup*
+max/*~*
+
+# General
+*.tmp
+*.cache
+
+# IDE
+.cursor/
+.vscode/

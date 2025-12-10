@@ -7,6 +7,7 @@ void ofApp::setup() {
     ofSetFrameRate(60);
 
     ofBackground(0);
+    ofSetFullscreen(true);
 
     receiver.setup(CLIENT_PORT);
     sender.setup(HOST, SERVER_PORT);
@@ -88,9 +89,6 @@ void ofApp::update() {
 
 
 
-
-
-
 }
 
 //--------------------------------------------------------------
@@ -168,7 +166,7 @@ void ofApp::draw() {
         ofSetColor(ofColor::white);
         DinAlter_18.drawString(ofToString(ofGetMouseX())
             + "\n" + ofToString(ofGetMouseY())
-            + "\n" + ofToString(ofGetFrameRate())
+            + "\n FPS:" + ofToString(ofGetFrameRate())
             + "\n" + ofToString(sceneTmp)
             + "\n" + ofToString(info.time)
             + "\n" + ofToString(nextTrack)
@@ -346,4 +344,4 @@ void ofApp::userLaneFunc(int _sceneNum) {
             initTime = info.time;
         }
     }
-};
+}

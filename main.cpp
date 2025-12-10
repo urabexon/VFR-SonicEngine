@@ -15,11 +15,8 @@
 int main() {
     ofGLFWWindowSettings settings;
 
-    /*
-      メインウィンドウの情報を記述
-      ウィンドウの幅、高さ
-    */
-
+    // メインウィンドウの情報を記述
+    // ウィンドウの幅、高さ
     // settings.width = 1920;
     // settings.height = 1080;
     settings.decorated = false;
@@ -30,7 +27,6 @@ int main() {
 
     //App生成
     shared_ptr<ofApp> mainApp(new ofApp);
-
     ofRunApp(mainWindow, mainApp);
     ofRunMainLoop();
 }

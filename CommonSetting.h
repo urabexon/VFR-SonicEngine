@@ -9,7 +9,6 @@
 
 #define FONT_DIN "font/DINAlternate-Bold.ttf"
 
-
 struct BasicInfos {
     float time;
     glm::vec2 screen_size;

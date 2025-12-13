@@ -15,18 +15,22 @@
 int main() {
     ofGLFWWindowSettings settings;
 
-    // メインウィンドウの情報を記述
-    // ウィンドウの幅、高さ
-    // settings.width = 1920;
-    // settings.height = 1080;
+    //ÉÅÉCÉìÉEÉBÉìÉhÉEÇÃèÓïÒÇãLèq
+    //ÉEÉBÉìÉhÉEÇÃïùÅAçÇÇ≥
+//    settings.width = 1920;
+//    settings.height = 1080;
     settings.decorated = false;
     settings.setSize(1920, 1080);
-    // ウィンドウを表示する座標（左上の座標指定）
+    //ÉEÉBÉìÉhÉEÇï\é¶Ç∑ÇÈç¿ïWÅiç∂è„ÇÃç¿ïWÇéwíËÅj
     settings.setPosition(ofVec2f(0, 0));
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
 
-    //App生成
+
+    //AppÇÃê∂ê¨
     shared_ptr<ofApp> mainApp(new ofApp);
+
     ofRunApp(mainWindow, mainApp);
+
+
     ofRunMainLoop();
 }

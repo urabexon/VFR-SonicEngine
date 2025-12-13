@@ -35,33 +35,18 @@ void UserLane::imageUpdate(string _imgPath) {
         cout << "false" << endl;
         tmpImage.load("./image/0.png");
     }
-
     tmpImage.update();
     mImagePath = _imgPath;
-
 }
 
 void UserLane::update(ofVec2f* _imageSize, string _userName, string _imagePath, string _artistName, string _trackName, vector<int> _coverArtNF) {
-    //tmpImage.update();
-
-//    for (int i = 0; i < 4; i++) {
-//        mTrackPeaks[i].push_back(mPeak[i]);
-//        if (mTrackPeaks[i].size() >= imageSize.x) mTrackPeaks[i].erase(mTrackPeaks[i].begin(), mTrackPeaks[i].begin() + 1);
-//    }
-
-
-
     mFbo.begin();
-
     ofClear(0);
-
     ofSetColor(ofColor::white);
     DinAlter.drawString("Artist: " + ofToString(_artistName) + "\nTrack: " + ofToString(_trackName), 540, 24);
     tmpImage.draw(0, 0, _imageSize->x, _imageSize->y);
 
-    
-    for (int i = 0; i < 4; i++) { // 4 = trackSize;
-
+    for (int i = 0; i < 4; i++) {
         ofVec2f beginPos = ofVec2f(120 + 80 * (i + 1), 0);
 
         ofPushStyle();
@@ -72,26 +57,13 @@ void UserLane::update(ofVec2f* _imageSize, string _userName, string _imagePath, 
         else imageUpdate(_imagePath);
 
         ofPopStyle();
-
-
         ofPushStyle();
         ofFill();
-        
-
-        //ofBeginShape();
-        //ofVertex(beginPos.x, 180);
-        //for (unsigned int j = 0; j < mTrackPeaks[i].size(); j++) ofVertex(beginPos.x + j, imageSize.x - mTrackPeaks[i][j] * 180.0f);
-        //ofVertex(beginPos.x + imageSize.x, 180);
-        //ofEndShape(false);
-
-        
         ofSetColor(mColor[i], 180);
         int gainLevel = 170 / 2 * mGain[i];
         ofDrawRectangle(beginPos.x, 180 - beginPos.y, 60, -1 * (170));
-        
         ofSetColor(mColor[i], 255 * _coverArtNF[i]);
         ofDrawRectangle(beginPos.x, 180 - beginPos.y, 60, -1 * (10 + 170 / 2 * mGain[i]));
-
         ofPopStyle();
 
     }
@@ -99,10 +71,6 @@ void UserLane::update(ofVec2f* _imageSize, string _userName, string _imagePath, 
     mFbo.end();
 }
 
-
-
 void UserLane::draw(ofVec2f _pos) {
-
     mFbo.draw(_pos.x, _pos.y - 24, mFboWH.x, mFboWH.y);
-
 }
